@@ -20,6 +20,15 @@
   </head>
 
   <body>
+  <%= render "layouts/navbar" %>
+  <% if alert.present? %>
+    <%= render "layouts/alert" %>
+  <% end %>
+  <% if notice.present? %>
+    <%= render "layouts/notice" %>
+  <% end %>
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
