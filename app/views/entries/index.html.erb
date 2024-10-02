@@ -2,6 +2,17 @@
   FoodTracker &ndash; <%= DateTime.now.strftime("%I:%M %p - %-d %b %Y") %>
 <% end %>
 
+<div class="field mt-5 has-text-centered">
+  <%= form_with(url: entries_path, method: :get, local: true) do %>
+    <div class="control">
+      <div class="select">
+        <%= select_tag :meal_type, options_for_select([['All', 'all'], ['Breakfast', 'Breakfast'], ['Lunch', 'Lunch'], ['Dinner', 'Dinner']], selected: params[:meal_type]), prompt: "Select a meal type" %>
+      </div>
+      <%= submit_tag 'Filter', class: "button is-primary ml-3" %>
+    </div>
+  <% end %>
+</div>
+
 <div class="columns is-multiline mt-3">
   <% @entries.each do |entry| %>
     <div class="column is-one-third">

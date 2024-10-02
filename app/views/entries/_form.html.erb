@@ -11,11 +11,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :meal_type, class: "label" %>
-    <div class="control">
-      <%= form.text_field :meal_type, class: "input" %>
+  <%= form.label :meal_type, class: "label" %>
+  <div class="control">
+    <div class="select">
+      <%= form.select :meal_type, options_for_select(["Breakfast", "Lunch", "Dinner"]), {}, class: "input" %>
     </div>
   </div>
+</div>
 
   <div class="field">
     <%= form.label :calories, class: "label" %>

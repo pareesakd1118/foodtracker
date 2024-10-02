@@ -3,7 +3,11 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = Entry.all
+    if params[:meal_type].present? && params[:meal_type] != 'all'
+      @entries = Entry.where(meal_type: params[:meal_type])
+    else
+      @entries = Entry.all
+    end
   end
 
   # GET /entries/1 or /entries/1.json
