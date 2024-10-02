@@ -1,0 +1,25 @@
+<div class="card">
+  <header class="card-header has-background-primary">
+    <p class="card-header-title">
+      <%= meal_type %>
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p><strong>Calories:</strong> <%= calories %> </p>
+      <p><strong>Protein:</strong> <%= proteins %> </p>
+      <p><strong>Carbohydrates:</strong> <%= carbohydrates %> </p>
+      <p><strong>Fats:</strong> <%= fats %></p>
+      <time datetime="2016-1-1"><%= DateTime.now.strftime("%I:%M %p - %-d %b %Y") %></time>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to "Show", link_path_show, class: "card-footer-item" %>
+    <%= link_to "Edit", link_path_edit, class: "card-footer-item" %>
+  </footer>
+</div>
