@@ -1,6 +1,8 @@
-<% content_for :title, "New entry" %>
 
-<h1>New entry</h1>
+<% content_for :form_button do %>
+  Create Entry
+<% end %>
+
 
 <%= render "form", entry: @entry %>
 

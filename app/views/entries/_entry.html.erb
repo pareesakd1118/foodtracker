@@ -1,27 +1,20 @@
-<div id="<%= dom_id entry %>">
-  <p>
-    <strong>Meal type:</strong>
-    <%= entry.meal_type %>
-  </p>
-
-  <p>
-    <strong>Calories:</strong>
-    <%= entry.calories %>
-  </p>
-
-  <p>
-    <strong>Proteins:</strong>
-    <%= entry.proteins %>
-  </p>
-
-  <p>
-    <strong>Carbohydrates:</strong>
-    <%= entry.carbohydrates %>
-  </p>
-
-  <p>
-    <strong>Fats:</strong>
-    <%= entry.fats %>
-  </p>
-
+<div class="card my-5">
+  <header class="card-header has-background-info">
+    <p class="card-header-title has-text-white is-size-4">
+      <%= entry.meal_type %> Details
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <p><strong>Calories:</strong> <%= entry.calories %></p>
+      <p><strong>Proteins:</strong> <%= entry.proteins %></p>
+      <p><strong>Carbohydrates:</strong> <%= entry.carbohydrates %></p>
+      <p><strong>Fats:</strong> <%= entry.fats %></p>
+      <p class="is-italic">Recorded at: <%= entry.created_at.strftime("%I:%M %p - %d %b %Y") %></p>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item has-text-warning" %>
+    <%= link_to "Back to Entries", entries_path, class: "card-footer-item has-text-info" %>
+  </footer>
 </div>

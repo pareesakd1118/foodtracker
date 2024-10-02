@@ -1,42 +1,53 @@
-<%= form_with(model: entry) do |form| %>
+<%= form_with(model: entry, class: "box mt-5") do |form| %>
   <% if entry.errors.any? %>
-    <div style="color: red">
+    <div class="notification is-danger">
       <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
       <ul>
-        <% entry.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% entry.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :meal_type, style: "display: block" %>
-    <%= form.text_field :meal_type %>
+  <div class="field">
+    <%= form.label :meal_type, class: "label" %>
+    <div class="control">
+      <%= form.text_field :meal_type, class: "input" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :calories, style: "display: block" %>
-    <%= form.number_field :calories %>
+  <div class="field">
+    <%= form.label :calories, class: "label" %>
+    <div class="control">
+      <%= form.number_field :calories, class: "input" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :proteins, style: "display: block" %>
-    <%= form.number_field :proteins %>
+  <div class="field">
+    <%= form.label :proteins, class: "label" %>
+    <div class="control">
+      <%= form.number_field :proteins, class: "input" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :carbohydrates, style: "display: block" %>
-    <%= form.number_field :carbohydrates %>
+  <div class="field">
+    <%= form.label :carbohydrates, class: "label" %>
+    <div class="control">
+      <%= form.number_field :carbohydrates, class: "input" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :fats, style: "display: block" %>
-    <%= form.number_field :fats %>
+  <div class="field">
+    <%= form.label :fats, class: "label" %>
+    <div class="control">
+      <%= form.number_field :fats, class: "input" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <div class="control">
+      <%= form.submit(yield(:form_button) || "Save Entry", class: "button is-primary") %>
+    </div>
   </div>
 <% end %>

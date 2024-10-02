@@ -1,13 +1,15 @@
-<% content_for :title, "Editing entry" %>
-
-<h1>Editing entry</h1>
+<% content_for :form_button do %>
+  Update Entry
+<% end %>
 
 <%= render "form", entry: @entry %>
 
-<br>
 
-<div>
-  <%= link_to "Show this entry", @entry %> |
-  <%= link_to "Back to entries", entries_path %> |
-  <%= link_to "Delete this entry", @entry, method: :delete %>
+
+<div class="buttons my-4">
+  <%= link_to "Show this entry", @entry, class: "button is-primary" %>
+  <%= link_to "Back to entries", entries_path, class: "button is-info" %>
 </div>
+
+
+
