@@ -2,6 +2,7 @@
   FoodTracker &ndash; <%= DateTime.now.strftime("%I:%M %p - %-d %b %Y") %>
 <% end %>
 
+<% if @entries.present? %>
 <div class="field mt-5 has-text-centered">
   <%= form_with(url: entries_path, method: :get, local: true) do %>
     <div class="control">
@@ -12,6 +13,14 @@
     </div>
   <% end %>
 </div>
+<% else %>
+
+<div class="field mt-5 has-text-centered">
+ 
+      <%= link_to 'Create First Entry for Today', new_entry_path class: "button is-primary ml-3" %>
+    
+</div>
+<% end %>
 
 <div class="columns is-multiline mt-3">
   <% @entries.each do |entry| %>
