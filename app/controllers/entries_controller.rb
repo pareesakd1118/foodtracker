@@ -4,9 +4,10 @@ class EntriesController < ApplicationController
   # GET /entries or /entries.json
   def index
     if params[:meal_type].present? && params[:meal_type] != 'all'
-      @entries = Entry.where(meal_type: params[:meal_type])
+      @entries = Entry.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+                      .where(meal_type: params[:meal_type])
     else
-      @entries = Entry.all
+      @entries = Entry.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
     end
   end
 
