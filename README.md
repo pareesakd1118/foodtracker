@@ -33,6 +33,7 @@ To run the tests, use:
 - Gained a deeper understanding of Rails and MVC structure.
 - Integrated CRUD functionality for managing entry' information.
 - Implemented Sort functionality and conditional rendering.
+- Implementing and learning about the different kinds of tests. 
 ## Challenges
-- Began working on testing for the first time, this needs to be completed. 
+- Began working on testing for the first time.
 
